@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot
+  name="wcbot_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="caster_fl_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="caster_fr_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="caster_rl_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="caster_rr_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="chair_Link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="fl_wheel_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="fr_wheel_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="main_L_Link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="main_R_Link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="rl_wheel_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="rr_wheel_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="spring_Link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+</robot>
+
+
