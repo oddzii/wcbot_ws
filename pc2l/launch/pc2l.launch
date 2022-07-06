@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+<!-- run pointcloud_to_laserscan node -->
+  <!-- filering_pointcloud data -->
+  <!--<arg name="cloud" default="throttle_filtering_points/filtered_points"/>-->
+  <!--<arg name="scan"  default="rgbd_scan"/>-->
+
+
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <remap from="cloud_in" to="/d435/depth/color/points"/>
+    <remap from="scan"     to="/camera_scan"/>
+    
+    <rosparam>
+        target_frame: t265_link #leave disabled to output scan in poincloud target_frame
+        transform_tolerance: 0.05
+        min_height: 0.05
+        max_height: 1.8
+
+        angle_min: -1.5708 # -M_PI/2
+        angle_max: 1.5708 #M_PI/2
+        angle_increment: 0.0087 #M_PI/360.0 (every degree)
+        scan_time: 0.01
+        range_min: 0.3
+        range_max: 6.0
+        use_inf: true
+
+        #concurency level, affects number of pointclouds queued for processing and number of threads used
+        #0 : Detect number of cores
+        #1 : Single threaded
+        # 2->inf : Parallelism level
+        concurrency_level: 1
+    </rosparam>
+  </node>
+</launch>
